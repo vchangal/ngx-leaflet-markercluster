@@ -2,7 +2,7 @@ import { Directive, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 
 import { LeafletDirective, LeafletDirectiveWrapper } from '@vchangal/ngx-leaflet';
 
-import * as L from 'leaflet';
+import * as L from '@vchangal/leaflet';
 import 'leaflet.markercluster';
 
 @Directive({
