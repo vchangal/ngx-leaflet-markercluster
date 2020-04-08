@@ -8,6 +8,7 @@
 		"member-access": false,
 		"member-ordering": [ true, { "order": "fields-first" } ],
 		"no-consecutive-blank-lines": [ true, 2 ],
+		"no-console": false,
 		"no-empty": true,
 		"no-string-literal": false,
 		"object-literal-sort-keys": false,

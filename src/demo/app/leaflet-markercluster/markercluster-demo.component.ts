@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as L from 'leaflet';
-import 'leaflet.markercluster';
+import * as L from '@vchangal/leaflet';
+import {MarkerClusterGroup, MarkerClusterGroupOptions} from '@vchangal/leaflet.markercluster';
 
 @Component({
 	selector: 'markercluster-demo',
@@ -32,9 +32,9 @@ export class MarkerClusterDemoComponent
 	};
 
 	// Marker cluster stuff
-	markerClusterGroup: L.MarkerClusterGroup;
+	markerClusterGroup: MarkerClusterGroup;
 	markerClusterData: L.Marker[] = [];
-	markerClusterOptions: L.MarkerClusterGroupOptions;
+	markerClusterOptions: MarkerClusterGroupOptions;
 
 	// Generators for lat/lon values
 	generateLat() { return Math.random() * 360 - 180; }
@@ -47,7 +47,7 @@ export class MarkerClusterDemoComponent
 
 	}
 
-	markerClusterReady(group: L.MarkerClusterGroup) {
+	markerClusterReady(group: MarkerClusterGroup) {
 
 		this.markerClusterGroup = group;
 

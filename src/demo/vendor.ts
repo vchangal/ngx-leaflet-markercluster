@@ -13,15 +13,15 @@ import 'core-js/es7/reflect';
 // Global Imports
 import 'bootstrap/dist/css/bootstrap.css';
 
-import 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import '@vchangal/leaflet';
+import '@vchangal/leaflet/dist/leaflet.css';
 
-import 'leaflet.markercluster';
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import '@vchangal/leaflet.markercluster';
+import '@vchangal/leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 // This addresses a weird thing with how Leaflet handles icon URLs. See README for details.
-import 'leaflet/dist/images/marker-shadow.png';
-import 'leaflet/dist/images/marker-icon.png';
+import '@vchangal/leaflet/dist/images/marker-shadow.png';
+import '@vchangal/leaflet/dist/images/marker-icon.png';
 
 
 // Angular Imports
@@ -32,7 +32,7 @@ import '@angular/platform-browser-dynamic';
 
 
 // Angular Third-Party
-import '@asymmetrik/ngx-leaflet';
+import '@vchangal/ngx-leaflet';
 
 // Other Dependencies
 import 'rxjs';
