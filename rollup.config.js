@@ -7,7 +7,7 @@ export default {
 	external: [
 		'@angular/core',
 		'@vchangal/leaflet',
-		'@vchangal/leaflet.markercluster',
+		'leaflet.markercluster',
 		'@vchangal/ngx-leaflet'
 	],
 	output: {
@@ -16,6 +16,7 @@ export default {
 		format: 'umd',
 		globals: {
 			'@angular/core': 'ng.core',
+			'@vchangal/leaflet': 'L',
 			'@vchangal/ngx-leaflet': 'ngxLeaflet'
 		},
 		name: pkg.moduleName,

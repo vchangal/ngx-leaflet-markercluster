@@ -2,8 +2,7 @@ import { Directive, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 
 import { LeafletDirective, LeafletDirectiveWrapper } from '@vchangal/ngx-leaflet';
 
-import {default as L} from '@vchangal/leaflet';
-import {CreateMarkerClusterGroup, MarkerClusterGroup, MarkerClusterGroupOptions} from '@vchangal/leaflet.markercluster';
+import * as L from '@vchangal/leaflet';
 
 @Directive({
 	selector: '[leafletMarkerCluster]',
@@ -12,16 +11,16 @@ export class LeafletMarkerClusterDirective
 implements OnChanges, OnInit {
 
 	leafletDirective: LeafletDirectiveWrapper;
-	markerClusterGroup: MarkerClusterGroup;
+	markerClusterGroup: L.MarkerClusterGroup;
 
 	// Hexbin data binding
 	@Input('leafletMarkerCluster') markerData: L.Layer[] = [];
 
 	// Options binding
-	@Input('leafletMarkerClusterOptions') markerClusterOptions: MarkerClusterGroupOptions;
+	@Input('leafletMarkerClusterOptions') markerClusterOptions: L.MarkerClusterGroupOptions;
 
 	// Fired when the marker cluster is created
-	@Output('leafletMarkerClusterReady') markerClusterReady: EventEmitter<MarkerClusterGroup> = new EventEmitter<MarkerClusterGroup>();
+	@Output('leafletMarkerClusterReady') markerClusterReady: EventEmitter<L.MarkerClusterGroup> = new EventEmitter<L.MarkerClusterGroup>();
 
 
 	constructor(leafletDirective: LeafletDirective) {
@@ -33,7 +32,7 @@ implements OnChanges, OnInit {
 		this.leafletDirective.init();
 
 		const map = this.leafletDirective.getMap();
-		this.markerClusterGroup = CreateMarkerClusterGroup(this.markerClusterOptions);
+		this.markerClusterGroup = L.markerClusterGroup(this.markerClusterOptions);
 
 		// Add the marker cluster group to the map
 		this.markerClusterGroup.addTo(map);
